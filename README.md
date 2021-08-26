@@ -30,6 +30,7 @@ Oh, they do? Ok nvm. Let me have this.
 
 - [Docker](https://docs.docker.com/)
 - [Docker compose](https://docs.docker.com/compose/)
+- [Apache web server](https://httpd.apache.org/)
 
 
 ## Setup
@@ -48,9 +49,8 @@ chmod +rwx scripts/*
 
 **"Production"**
 
-Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
-
-Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
+* Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
+* Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
 
 ## Useful Links
 
