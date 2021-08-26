@@ -1,0 +1,6 @@
+export enum INSPIRATION_MEDIA_TYPE {
+  IMAGE = 'IMAGE',
+  VIDEO = 'VIDEO',
+}
+
+export const INSPIRATION_LIST_PAGE_SIZE = 12;

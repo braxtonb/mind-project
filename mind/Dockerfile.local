@@ -1,0 +1,18 @@
+FROM node:alpine
+
+LABEL version="1.0"
+LABEL description="This is the docker image for the react app running in dev"
+LABEL maintainer = ["braxtonbrewton@gmail.com"]
+
+# Environment variables
+ENV APP_DIR=/usr/src/app
+
+RUN mkdir -p ${APP_DIR}
+WORKDIR ${APP_DIR}
+
+# No need for further instructions
+# since the entire mind is mounted for local
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

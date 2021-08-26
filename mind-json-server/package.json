@@ -1,0 +1,19 @@
+{
+  "name": "mind-json-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "json-server --watch db.json --port 4000",
+    "start": "json-server --watch db.json --host 0.0.0.0 --port 4000",
+    "buildImage": "docker build -t mind-json-server:latest .",
+    "runContainer": "docker run -d --rm -p 4000:4000 mind-json-server:latest",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}

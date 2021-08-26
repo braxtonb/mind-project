@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  ui:
+    build:
+      context: ./mind
+      dockerfile: Dockerfile.local
+    ports:
+      - 3000:3000
+    command: npm start
+    volumes:
+      - ./mind:/usr/src/app
+
+  json-server:
+    build:
+      context: ./mind-json-server
+      dockerfile: Dockerfile.local
+    command: npm start
+    ports:
+      - 4000:4000
+    volumes:
+      - ./mind-json-server:/usr/src/app
