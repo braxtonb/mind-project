@@ -28,3 +28,12 @@ LABEL maintainer = ["braxtonbrewton@gmail.com"]
 WORKDIR /usr/local/apache2/htdocs
 
 COPY --from=build /usr/src/app/build/ .
+# .htacess file controls Apache's RewriteRule sets from mod_rewrite
+COPY --from=build /usr/src/app/.htaccess .
+# mind-httpd.conf enables mod_rewrite by uncommenting the following conf/httpd.conf line
+# LoadModule rewrite_module modules/mod_rewrite.so
+# mind-httpd.conf also sets AllowOverride to All for "/usr/local/apache2/htdocs"
+# this ensures .htaccess' RewriteRule sets are applied
+COPY --from=build /usr/src/app/mind-httpd.conf /usr/local/apache2/conf/httpd.conf
+
+CMD ["apachectl", "-D", "FOREGROUND"]
