@@ -6,14 +6,29 @@
   "scripts": {
     "dev": "json-server --watch db.json --port 4000",
     "start": "json-server --watch db.json --host 0.0.0.0 --port 4000",
-    "buildImage": "docker build -t mind-json-server:latest .",
-    "runContainer": "docker run -d --rm -p 4000:4000 mind-json-server:latest",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ntl": "ntl -o",
+    "buildImage:local": "docker build -f Dockerfile.local -t mind-json-server:local .",
+    "runContainer:local": "docker run -d --rm -p 4000:4000 -v `PWD`:/usr/src/app mind-json-server:local",
+    "buildImage:prod": "docker build -t mind-json-server:prod .",
+    "runContainer:prod": "docker run -d --rm -p 4000:4000 -v `PWD`:/usr/src/app mind-json-server:prod"
+  },
+  "ntl": {
+    "descriptions": {
+      "dev": "Start the JSON server API (not intended for docker)",
+      "start": "Start the JSON server API (intended for docker)",
+      "buildImage:local": "[LOCAL] Build the docker image for the mind JSON server API",
+      "runContainer:local": "[LOCAL] Run a docker container instance of the mind JSON server API image",
+      "buildImage:prod": "[PROD] Build the docker image for the mind JSON server API",
+      "runContainer:prod": "[PROD] Run a docker container instance of the mind JSON server API image"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.16.3"
+  },
+  "devDependencies": {
+    "ntl": "^5.1.0"
   }
 }

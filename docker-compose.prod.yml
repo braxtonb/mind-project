@@ -10,6 +10,5 @@ services:
   json-server:
     build:
       context: ./mind-json-server
-    command: npm start
     ports:
       - 4000:4000
