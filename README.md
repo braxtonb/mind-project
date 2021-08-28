@@ -52,6 +52,16 @@ chmod +rwx scripts/*
 * Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
 * Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
 
+**Other**
+
+If interested, everything can be run locally using `npm run dev` scripts.
+```shell
+npm run dev --prefix ./mind-json-server
+npm run dev --prefix ./mind
+```
+
+Looking for what each npm script does? Try `npm run ntl` to select a script to run from a list of commands and their descriptions.
+
 ## Useful Links
 
 * [How to setup a simple Apache Web Server in a docker container](https://www.tecmint.com/install-apache-web-server-in-a-docker-container/)

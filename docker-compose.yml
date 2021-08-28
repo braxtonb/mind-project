@@ -5,9 +5,9 @@ services:
     build:
       context: ./mind
       dockerfile: Dockerfile.local
+    command: npm start
     ports:
       - 3000:3000
-    command: npm start
     volumes:
       - ./mind:/usr/src/app
 
