@@ -47,12 +47,10 @@ chmod +rwx scripts/*
 1. Install dependencies with `./scripts/setup-local.sh`
 2. Start containers with `docker-compose up`
 
-🚧 **"Production"** 🚧
+**"Production"**
 
 * Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
 * Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
-
-*Note: Production setup in progress*
 
 ## Useful Links
 
