@@ -6,7 +6,6 @@ services:
       context: ./mind
     ports:
       - 3000:80
-    command: npm start
 
   json-server:
     build:
