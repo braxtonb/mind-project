@@ -30,6 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:nowatch": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "ntl": "ntl -o",
     "buildImage:local": "docker build -f Dockerfile.local -t mind:local .",
@@ -41,7 +42,8 @@
     "descriptions": {
       "start": "Start react app",
       "build": "Build react app",
-      "test": "Test react app",
+      "test": "Run all react app test suites",
+      "test:nowatch": "Run all react app test suites without watching for changes",
       "eject": "Remove create react app build tools and configuration choices",
       "buildImage:local": "[LOCAL] Build the docker image for the mind UI",
       "runContainer:local": "[LOCAL] Run a docker container instance of the mind UI image",
