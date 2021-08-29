@@ -19,6 +19,7 @@ export interface InspirationType {
   mediaURL: string;
   description?: string;
   createdAt?: number;
+  updatedAt?: number;
 }
 
 /**

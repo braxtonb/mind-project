@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface InspirationListProps {
+export interface InspirationListProps {
   isLoading?: boolean;
   isError?: boolean;
   inspirations?: InspirationType[];

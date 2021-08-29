@@ -28,7 +28,11 @@ const Inspiration: React.FC<InspirationProps> = ({
   const classes = useStyles();
 
   return (
-    <Grid container direction="column">
+    <Grid
+      container
+      direction="column"
+      data-testid={`inspiration-${inspiration.id}`}
+    >
       <Grid item xs={12}>
         <InspirationMedia inspiration={inspiration} />
       </Grid>
