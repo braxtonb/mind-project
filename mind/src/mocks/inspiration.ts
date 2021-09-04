@@ -1,30 +1,24 @@
+import faker from 'faker';
 import { INSPIRATION_MEDIA_TYPE } from '../constants/inspiration-contants';
 import { InspirationType } from '../constants/types';
 
-const defaultInspiration: InspirationType = {
-  id: Date.now(),
-  name: 'Name',
-  creatorName: 'Creator',
-  url: 'some-url',
-  mediaType: INSPIRATION_MEDIA_TYPE.IMAGE,
-  mediaURL: 'some-media-url',
-  description: 'description',
-  createdAt: Date.now(),
-  updatedAt: Date.now(),
-};
-
-export const createInspiration = (inspiration: Partial<InspirationType> = {}) => {
-  // If no name is explicitly provided, use the id to generate
-  // unique names and descriptions across function calls
-  if (!inspiration?.name) {
-    inspiration.name = `Name ${inspiration.id ?? defaultInspiration.id}`;
-  }
-  if (!inspiration?.description) {
-    inspiration.description = `Description ${inspiration.id ?? defaultInspiration.id}`;
-  }
-
+const _createDefaultFakeInspiration = (): InspirationType => {
   return {
-    ...defaultInspiration,
+    id: Date.now(),
+    name: faker.commerce.productName(),
+    creatorName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    url: 'some-url',
+    mediaType: INSPIRATION_MEDIA_TYPE.IMAGE,
+    mediaURL: faker.image.nature(),
+    description: faker.random.words(4),
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+  };
+}
+
+export const createFakeInspiration = (inspiration: Partial<InspirationType> = {}) => {
+  return {
+    ..._createDefaultFakeInspiration(),
     ...inspiration,
   };
 };

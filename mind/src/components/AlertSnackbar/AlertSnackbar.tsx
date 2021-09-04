@@ -9,7 +9,7 @@ const Alert = React.forwardRef((props: AlertProps, ref) => {
   return <MuiAlert ref={ref} elevation={6} variant="filled" {...props} />;
 });
 
-interface AlertSnackbarProps {
+export interface AlertSnackbarProps {
   handleSnackbarClose: (_: React.SyntheticEvent, reason?: string) => void;
   isSnackbarOpen: boolean;
   message: string;

@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install --prefix ./mind
-      - run: npm run test:nowatch --prefix ./mind
+      - run: npm run test:coverage --prefix ./mind

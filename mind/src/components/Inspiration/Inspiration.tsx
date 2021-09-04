@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface InspirationProps {
+export interface InspirationProps {
   inspiration: InspirationType;
   onRemoveClick: (inspiration: InspirationType) => void;
 }

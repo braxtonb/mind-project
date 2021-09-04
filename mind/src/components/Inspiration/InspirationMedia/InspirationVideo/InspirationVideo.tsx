@@ -58,6 +58,10 @@ const InspirationVideo: React.FC<InspirationVideoProps> = ({ inspiration }) => {
     }
   };
 
+  const _handleVideoError = () => {
+    alert('Error loading video');
+  };
+
   return (
     <InspirationFigure
       className={classes.inspirationFigure}
@@ -65,7 +69,12 @@ const InspirationVideo: React.FC<InspirationVideoProps> = ({ inspiration }) => {
       onMouseOut={_handleMouseOut}
     >
       <InspirationLink href={inspiration.url} target="_blank" />
-      <Video ref={videoRef} loop src={inspiration.mediaURL} />
+      <Video
+        ref={videoRef}
+        loop
+        src={inspiration.mediaURL}
+        onError={_handleVideoError}
+      />
       <VideoCamIcon fontSize="small" className={classes.videoCamIcon} />
     </InspirationFigure>
   );

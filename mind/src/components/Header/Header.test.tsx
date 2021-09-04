@@ -1,21 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import { composeStories } from '@storybook/testing-react';
+import * as stories from './Header.stories';
+
+const { HeaderWithSubtitle, HeaderWithoutSubtitle } = composeStories(stories);
 
 describe('Header', () => {
-  const title = 'My header title';
-  const subheader = 'My subheader';
-
   it('should render Header with title and subheader', () => {
-    render(<Header title={title} subheader={subheader} />);
+    render(<HeaderWithSubtitle />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(title);
-    expect(screen.getByText(subheader)).toBeInTheDocument();
+    expect(screen.getByRole('heading')).toHaveTextContent(HeaderWithSubtitle.args?.title as string);
+    expect(screen.getByText(HeaderWithSubtitle.args?.subheader as string)).toBeInTheDocument();
   });
 
   it('should render Header only title', () => {
-    render(<Header title={title} />);
+    render(<HeaderWithoutSubtitle />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(title);
+    expect(screen.getByRole('heading')).toHaveTextContent(HeaderWithoutSubtitle.args?.title as string);
+    expect(screen.queryByText(HeaderWithSubtitle.args?.subheader as string)).not.toBeInTheDocument();
   });
 });
