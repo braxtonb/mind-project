@@ -5,7 +5,7 @@ import { InspirationType } from '../constants/types';
 const _createDefaultFakeInspiration = (): InspirationType => {
   return {
     id: Date.now(),
-    name: faker.commerce.productName(),
+    name: faker.random.words(4),
     creatorName: `${faker.name.firstName()} ${faker.name.lastName()}`,
     url: 'some-url',
     mediaType: INSPIRATION_MEDIA_TYPE.IMAGE,

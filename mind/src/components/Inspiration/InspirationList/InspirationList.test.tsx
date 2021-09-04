@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import InspirationList, { InspirationListProps } from './InspirationList';
-import { createFakeInspiration } from '../../../mocks/inspiration';
+import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
 
 describe('InspirationList', () => {
   const inspirations = [

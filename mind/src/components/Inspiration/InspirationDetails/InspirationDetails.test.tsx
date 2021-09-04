@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import InspirationDetails from './InspirationDetails';
-import { createFakeInspiration } from '../../../mocks/inspiration';
+import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
 
 describe('InspirationDetails', () => {
   const inspiration = createFakeInspiration();

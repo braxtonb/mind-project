@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import InspirationList, { InspirationListProps } from './InspirationList';
-import { createFakeInspiration } from '../../../mocks/inspiration';
+import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
 
 import type { InspirationType } from '../../../constants/types';
 
