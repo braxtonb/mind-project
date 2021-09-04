@@ -14,6 +14,7 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "classnames": "^2.3.1",
+    "faker": "^5.5.3",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -30,20 +31,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:nowatch": "react-scripts test --watchAll=false",
+    "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
     "ntl": "ntl -o",
     "buildImage:local": "docker build -f Dockerfile.local -t mind:local .",
     "runContainer:local": "docker run -d --rm -p 3000:3000 -v `PWD`:/usr/src/app mind:local",
     "buildImage:prod": "docker build -t mind:prod .",
-    "runContainer:prod": "docker run -d --rm -p 3000:80 -v `PWD`:/usr/src/app mind:prod"
+    "runContainer:prod": "docker run -d --rm -p 3000:80 -v `PWD`:/usr/src/app mind:prod",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "ntl": {
     "descriptions": {
       "start": "Start react app",
       "build": "Build react app",
       "test": "Run all react app test suites",
-      "test:nowatch": "Run all react app test suites without watching for changes",
+      "test:coverage": "Run all react app test suites and output coverage",
       "eject": "Remove create react app build tools and configuration choices",
       "buildImage:local": "[LOCAL] Build the docker image for the mind UI",
       "runContainer:local": "[LOCAL] Run a docker container instance of the mind UI image",
@@ -55,6 +58,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -70,6 +83,14 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8",
+    "@storybook/testing-react": "0.0.22",
+    "@types/faker": "^5.5.8",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.12",
     "ntl": "^5.1.0"

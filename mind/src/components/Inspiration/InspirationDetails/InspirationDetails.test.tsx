@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import InspirationDetails from './InspirationDetails';
-import { createInspiration } from '../../../mocks/inspiration';
+import { createFakeInspiration } from '../../../mocks/inspiration';
 
 describe('InspirationDetails', () => {
-  const inspiration = createInspiration();
+  const inspiration = createFakeInspiration();
 
   it('should render InspirationDetails with name and creator name', () => {
     render(<InspirationDetails inspiration={inspiration} />);
