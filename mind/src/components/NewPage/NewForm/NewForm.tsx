@@ -108,7 +108,7 @@ const newFormSchema = Yup.object().shape({
     .notRequired(),
 });
 
-interface NewFormProps {
+export interface NewFormProps {
   isLoading?: boolean;
   onSubmit: (values: InspirationType) => void;
 }
@@ -277,7 +277,7 @@ const NewForm: React.FC<NewFormProps> = ({ isLoading, onSubmit }) => {
         disabled={isLoading || _isFormInvalid(formik.values, formik.errors)}
         className={classes.submit}
       >
-        Add
+        {isLoading ? 'Adding...' : 'Add'}
       </Button>
     </Grid>
   );

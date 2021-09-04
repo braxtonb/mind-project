@@ -2,14 +2,10 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import InspirationList, { InspirationListProps } from './InspirationList';
-import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
+import { createFakeInspirationList } from '../../../mocks/inspiration-mocks';
 
 describe('InspirationList', () => {
-  const inspirations = [
-    createFakeInspiration({ id: 1 }),
-    createFakeInspiration({ id: 2 }),
-    createFakeInspiration({ id: 3 }),
-  ];
+  const inspirations = createFakeInspirationList(3);
   const onPaginationChange = jest.fn().mockName('onPaginationChange');
   const onRemoveClick = jest.fn().mockName('onRemoveClick');
   const createTestCase = ({

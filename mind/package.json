@@ -38,7 +38,7 @@
     "runContainer:local": "docker run -d --rm -p 3000:3000 -v `PWD`:/usr/src/app mind:local",
     "buildImage:prod": "docker build -t mind:prod .",
     "runContainer:prod": "docker run -d --rm -p 3000:80 -v `PWD`:/usr/src/app mind:prod",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "msw init public/ && start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "ntl": {
@@ -94,6 +94,11 @@
     "@types/faker": "^5.5.8",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.12",
+    "msw": "^0.35.0",
+    "msw-storybook-addon": "^1.2.0",
     "ntl": "^5.1.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

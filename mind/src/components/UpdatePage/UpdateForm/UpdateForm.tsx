@@ -99,7 +99,7 @@ const updateFormSchema = Yup.object().shape({
     .notRequired(),
 });
 
-interface UpdateFormProps {
+export interface UpdateFormProps {
   isLoading?: boolean;
   inspiration: InspirationType;
   onSubmit: (values: InspirationType) => void;
@@ -273,7 +273,7 @@ const UpdateForm: React.FC<UpdateFormProps> = ({
         disabled={isLoading || _isFormInvalid(formik.values, formik.errors)}
         className={classes.submit}
       >
-        Save
+        {isLoading ? 'Saving...' : 'Save'}
       </Button>
     </Grid>
   );
