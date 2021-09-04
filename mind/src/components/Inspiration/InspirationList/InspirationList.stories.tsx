@@ -8,7 +8,6 @@ import type { InspirationType } from '../../../constants/types';
 export default {
   component: InspirationList,
   title: 'Inspiration List',
-  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as Meta;
 
 const Template: Story<InspirationListProps> = (args) => (

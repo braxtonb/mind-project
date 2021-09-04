@@ -5,7 +5,6 @@ import AlertSnackbar, { AlertSnackbarProps } from './AlertSnackbar';
 export default {
   component: AlertSnackbar,
   title: 'AlertSnackbar',
-  argTypes: { handleSnackbarClose: { action: 'clicked' } },
 } as Meta;
 
 const Template: Story<AlertSnackbarProps> = (args) => (

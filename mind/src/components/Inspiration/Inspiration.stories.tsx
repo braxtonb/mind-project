@@ -7,7 +7,13 @@ import { INSPIRATION_MEDIA_TYPE } from '../../constants/inspiration-contants';
 export default {
   component: Inspiration,
   title: 'Inspiration',
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 600 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const Template: Story<InspirationProps> = (args) => (
