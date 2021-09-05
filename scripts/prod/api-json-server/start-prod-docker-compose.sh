@@ -1,0 +1,1 @@
+docker-compose -f docker-compose.prod.yml --profile api-json-server up -d --build

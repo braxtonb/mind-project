@@ -36,13 +36,7 @@ const About: React.FC = () => {
             things that have served as inspiration.
           </Typography>
           <Typography paragraph>
-            {' '}
-            I am aware there are many other ways of storing what has inspired me
-            but do they also come with the side effect of working more with
-            React Query?
-          </Typography>
-          <Typography paragraph>
-            Oh, they do? Ok nvm. Let me have this.
+            Mind enables storing image and video references used as inspiration for the new project.
           </Typography>
         </Grid>
       </Grid>

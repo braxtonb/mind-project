@@ -4,6 +4,8 @@
 
 I have an idea for a new project and wanted a place to store all the things that have served as inspiration.
 
+Mind enables storing image and video references used as inspiration for the new project.
+
 ## Technology Stack
 
 **Frontend**
@@ -46,16 +48,21 @@ chmod +rwx scripts/*
 1. Install dependencies with `./scripts/setup-local.sh`
 2. Start containers with `docker-compose up`
 
-**"Production"**
+**"Production Python Flask API"**
 
-* Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
-* Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
+* Build images and run containers for the UI and Python Flask API with `./scripts/api-python/start-prod.sh`
+* Alternatively, use `docker-compose` with `./scripts/api-python/start-prod-docker-compose.sh`
+
+**"Production JSON Server"**
+
+* Build images and run containers for the UI and JSON Server API with `./scripts/api-json-server/start-prod.sh`
+* Alternatively, use `docker-compose` with `./scripts/api-json-server/start-prod-docker-compose-api-json-server.sh`
 
 **Other**
 
 If interested, everything can be run locally using `npm run dev` scripts.
 ```shell
-npm run dev --prefix ./mind-json-server
+npm run dev --prefix ./mind-api-json-server
 npm run dev --prefix ./mind
 ```
 
