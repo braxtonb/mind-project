@@ -4,10 +4,6 @@
 
 I have an idea for a new project and wanted a place to store all the things that have served as inspiration.
 
-I am aware there are many other ways of storing what has inspired me but do they also come with the side effect of working more with React Query?
-
-Oh, they do? Ok nvm. Let me have this.
-
 ## Technology Stack
 
 **Frontend**
@@ -62,6 +58,12 @@ If interested, everything can be run locally using `npm run dev` scripts.
 npm run dev --prefix ./mind-json-server
 npm run dev --prefix ./mind
 ```
+
+## Mind Component Library
+
+Run `npm run storybook --prefix ./mind` to start storybook for isolated component development or viewing a component gallery.
+
+## Available NPM Scripts
 
 Looking for what each npm script does? Try `npm run ntl` to select a script to run from a list of commands and their descriptions.
 
