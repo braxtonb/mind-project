@@ -115,8 +115,6 @@ const UpdateForm: React.FC<UpdateFormProps> = ({
   const _handleSubmit = async (values: InspirationType) => {
     try {
       onSubmit(values);
-
-      formik.resetForm();
     } catch (error) {
       console.error('[UpdateForm] there was an error');
     }

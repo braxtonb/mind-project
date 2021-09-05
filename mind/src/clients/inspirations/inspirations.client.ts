@@ -1,6 +1,7 @@
 import { InspirationType } from '../../constants/types';
 import { API_URL } from '../../constants/client-constants';
 import { INSPIRATION_LIST_PAGE_SIZE } from '../../constants/inspiration-contants';
+import FetchApiClient from '../shared/fetch-api-client';
 
 export interface GetInspirationsArgs {
   page?: number;
@@ -15,7 +16,9 @@ interface GetInspirationsResponse {
 class InspirationClient {
   private static DEFAULT_BASE_URL = API_URL;
 
-  private static processGetInspirationRes = async (res: Response) => {
+  private static processGetInspirationsRes = async (res: Response) => {
+    FetchApiClient.validateResponse(res.status);
+
     const { headers } = res;
     const count = headers.has('x-total-count')
       ? headers.get('x-total-count')
@@ -42,8 +45,8 @@ class InspirationClient {
       };
       const search = new URLSearchParams(queryParams);
       const URL = `${baseURL}/inspirations?${search.toString()}`;
-      const response = fetch(URL).then(
-        InspirationClient.processGetInspirationRes,
+      const response = await fetch(URL).then(
+        InspirationClient.processGetInspirationsRes,
       );
 
       return response;
@@ -59,9 +62,9 @@ class InspirationClient {
   ) => {
     try {
       const URL = `${baseURL}/inspirations/${id}`;
-      const response = fetch(URL).then((res) => res.json());
+      const { data } = await FetchApiClient.request(URL);
 
-      return response;
+      return data;
     } catch (error) {
       console.error(`[getInspirationById] ${error.message}`);
       throw error;
@@ -77,7 +80,7 @@ class InspirationClient {
         throw new Error('[addInspiration] missing inspiration argument');
       }
 
-      const URL = `${baseURL}/inspirations/`;
+      const URL = `${baseURL}/inspirations`;
       const body = JSON.stringify({ ...inspiration });
       const fetchConfig = {
         method: 'POST',
@@ -86,9 +89,9 @@ class InspirationClient {
         },
         body,
       };
-      const response = fetch(URL, fetchConfig).then((res) => res.json());
+      const { data } = await FetchApiClient.request(URL, fetchConfig);
 
-      return response;
+      return data;
     } catch (error) {
       console.error(`[addInspiration] ${error.message}`);
       throw error;
@@ -113,9 +116,9 @@ class InspirationClient {
         },
         body,
       };
-      const response = fetch(URL, fetchConfig).then((res) => res.json());
+      const { data } = await FetchApiClient.request(URL, fetchConfig);
 
-      return response;
+      return data;
     } catch (error) {
       console.error(`[updateInspirationById] ${error.message}`);
       throw error;
@@ -138,9 +141,9 @@ class InspirationClient {
           'Content-Type': 'application/json',
         },
       };
-      const response = fetch(URL, fetchConfig).then((res) => res.json());
+      const { data } = await FetchApiClient.request(URL, fetchConfig);
 
-      return response;
+      return data;
     } catch (error) {
       console.error(`[removeInspirationById] ${error.message}`);
       throw error;
