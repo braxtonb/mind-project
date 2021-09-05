@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import InspirationList, { InspirationListProps } from './InspirationList';
-import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
-
-import type { InspirationType } from '../../../constants/types';
+import { createFakeInspirationList } from '../../../mocks/inspiration-mocks';
 
 export default {
   component: InspirationList,
@@ -14,23 +12,16 @@ const Template: Story<InspirationListProps> = (args) => (
   <InspirationList {...args} />
 );
 
-const getInspirations = (): InspirationType[] => [
-  createFakeInspiration({ id: 1 }),
-  createFakeInspiration({ id: 2 }),
-  createFakeInspiration({ id: 3 }),
-  createFakeInspiration({ id: 3 }),
-];
-
 export const DefaultList = Template.bind({});
 DefaultList.args = {
-  inspirations: getInspirations(),
+  inspirations: createFakeInspirationList(4),
   numberOfPages: 1,
   page: 1,
 };
 
 export const MultiplePagesList = Template.bind({});
 MultiplePagesList.args = {
-  inspirations: [...getInspirations(), ...getInspirations()],
+  inspirations: createFakeInspirationList(12),
   numberOfPages: 3,
   page: 1,
 };

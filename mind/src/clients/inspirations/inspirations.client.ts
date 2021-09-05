@@ -2,7 +2,7 @@ import { InspirationType } from '../../constants/types';
 import { API_URL } from '../../constants/client-constants';
 import { INSPIRATION_LIST_PAGE_SIZE } from '../../constants/inspiration-contants';
 
-interface GetInspirationsArgs {
+export interface GetInspirationsArgs {
   page?: number;
   baseURL?: string;
 }
@@ -23,11 +23,11 @@ class InspirationClient {
     // Note: if json() is used instead of res.json() the following error
     // will be thrown:
     // TypeError: Failed to execute 'json' on 'Response': Illegal invocation
-    const inspirations = (await res.json()) as unknown as InspirationType[];
+    const inspirations = await res.json();
 
     return {
       count: count === null ? 0 : +count,
-      inspirations,
+      inspirations: inspirations?.data ?? inspirations as InspirationType[],
     };
   };
 
