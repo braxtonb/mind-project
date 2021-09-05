@@ -19,8 +19,6 @@ class FakeInspirationController {
     res: ResponseComposition<any>,
     ctx: RestContext,
   ) => {
-    // number of total inspirations, used to set a total count custom header
-    const { length } = this.inspirations;
     const paginatedInspirations = this.inspirationService.getPaginatedInspirations(
       {
         page: parseInt(req.url.searchParams.get('_page') ?? '1', 10),
@@ -30,7 +28,7 @@ class FakeInspirationController {
     );
 
     return res(
-      ctx.set('x-total-count', length.toString()),
+      ctx.set('x-total-count', this.inspirations.length.toString()),
       ctx.json(paginatedInspirations),
     );
   };
