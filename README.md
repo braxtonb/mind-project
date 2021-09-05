@@ -21,6 +21,9 @@ Oh, they do? Ok nvm. Let me have this.
 - [React Router](https://reactrouter.com/web/guides/quick-start)
 - [Formik](https://formik.org/) (form library)
 - [Yup](https://github.com/jquense/yup) (form validation)
+- [Storybook](https://storybook.js.org/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [msw](https://mswjs.io/)
 
 **Backend**
 

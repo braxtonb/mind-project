@@ -3,8 +3,6 @@ import { Story, Meta } from '@storybook/react';
 import InspirationList, { InspirationListProps } from './InspirationList';
 import { createFakeInspirationList } from '../../../mocks/inspiration-mocks';
 
-import type { InspirationType } from '../../../constants/types';
-
 export default {
   component: InspirationList,
   title: 'Inspiration List',

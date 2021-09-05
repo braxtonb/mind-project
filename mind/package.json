@@ -51,7 +51,9 @@
       "buildImage:local": "[LOCAL] Build the docker image for the mind UI",
       "runContainer:local": "[LOCAL] Run a docker container instance of the mind UI image",
       "buildImage:prod": "[PROD] Build the docker image for the mind UI",
-      "runContainer:prod": "[PROD] Run a docker container instance of the mind UI image"
+      "runContainer:prod": "[PROD] Run a docker container instance of the mind UI image",
+      "storybook": "Start storybook for isolated component development or viewing component gallery",
+      "build-storybook": "Build storybook for production"
     }
   },
   "eslintConfig": {

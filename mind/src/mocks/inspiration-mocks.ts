@@ -28,5 +28,5 @@ export const createFakeInspiration = (
 export const createFakeInspirationList = (length = 20): InspirationType[] => {
   return new Array(length)
     .fill(null)
-    .map((_, id) => createFakeInspiration({ id }));
+    .map((_, id) => createFakeInspiration({ id: id + 1 }));
 };
