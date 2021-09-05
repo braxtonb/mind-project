@@ -40,7 +40,7 @@ Mind enables storing image and video references used as inspiration for the new 
 
 (Optional) Update permissions to all shell scripts in the `scripts` directory
 ```shell
-chmod +rwx scripts/*
+chmod +rwx scripts/**/*
 ```
 
 **Local dev**
