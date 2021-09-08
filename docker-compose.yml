@@ -12,6 +12,11 @@ services:
       - ./mind:/usr/src/app
 
   api-python:
+    build:
+      context: ./mind-api-python
+      dockerfile: Dockerfile.local
+    ports:
+      - 4000:4000
     profiles:
       - api-python
 

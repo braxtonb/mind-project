@@ -20,7 +20,7 @@ class InspirationService:
     @staticmethod
     def get(inspiration_id: int) -> InspirationInterface:
         for inspiration in inspirations:
-            if inspiration['id'] == inspiration_id:
+            if inspiration["id"] == inspiration_id:
                 return inspiration
 
         return None
@@ -28,7 +28,7 @@ class InspirationService:
     @staticmethod
     def update(inspiration_id: int, new_data: InspirationInterface) -> InspirationInterface:
         for inspiration in inspirations:
-            if inspiration['id'] == inspiration_id:
+            if inspiration["id"] == inspiration_id:
                 inspiration.update(new_data)
 
                 return inspiration
@@ -38,7 +38,7 @@ class InspirationService:
     @staticmethod
     def delete(inspiration_id: int) -> InspirationInterface:
         for index, inspiration in enumerate(inspirations):
-            if inspiration['id'] == inspiration_id:
+            if inspiration["id"] == inspiration_id:
                 return inspirations.pop(index)
 
         return None

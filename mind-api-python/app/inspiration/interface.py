@@ -2,8 +2,8 @@ from enum import Enum
 from typing import TypedDict
 
 class MediaType(Enum):
-    IMAGE = 'IMAGE'
-    VIDEO = 'VIDEO'
+    IMAGE = "IMAGE"
+    VIDEO = "VIDEO"
 
 
 class InspirationInterface(TypedDict, total=False):

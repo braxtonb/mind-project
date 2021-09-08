@@ -8,6 +8,10 @@ services:
       - 3000:80
 
   api-python:
+    build:
+      context: ./mind-api-python
+    ports:
+      - 4000:4000
     profiles:
       - api-python
 

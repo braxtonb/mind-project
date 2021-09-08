@@ -37,7 +37,7 @@
     "buildImage:local": "docker build -f Dockerfile.local -t mind:local .",
     "runContainer:local": "docker run -d --rm -p 3000:3000 -v `PWD`:/usr/src/app mind:local",
     "buildImage:prod": "docker build -t mind:prod .",
-    "runContainer:prod": "docker run -d --rm -p 3000:80 -v `PWD`:/usr/src/app mind:prod",
+    "runContainer:prod": "docker run -d --rm -p 3000:80 mind:prod",
     "storybook": "msw init public/ && start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },

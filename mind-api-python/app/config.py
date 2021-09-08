@@ -4,17 +4,17 @@ from typing import List, Type
 
 class BaseConfig:
     CONFIG_NAME = "base"
-    TOTAL_COUNT_HEADER = 'x-total-count'
+    TOTAL_COUNT_HEADER = "x-total-count"
 
 
 class LocalConfig:
     CONFIG_NAME = "local"
-    TOTAL_COUNT_HEADER = 'x-total-count'
+    TOTAL_COUNT_HEADER = "x-total-count"
 
 
 class ProductionConfig:
     CONFIG_NAME = "prod"
-    TOTAL_COUNT_HEADER = 'x-total-count'
+    TOTAL_COUNT_HEADER = "x-total-count"
 
 
 EXPORT_CONFIGS: List[Type[BaseConfig]] = [

@@ -46,17 +46,18 @@ chmod +rwx scripts/**/*
 **Local dev**
 
 1. Install dependencies with `./scripts/setup-local.sh`
-2. Start containers with `docker-compose up`
+2a. Start ui and python flask API containers with `docker-compose --profile api-python up`
+2b. Start ui and json server API containers with `docker-compose --profile api-json-server up`
 
 **"Production Python Flask API"**
 
-* Build images and run containers for the UI and Python Flask API with `./scripts/api-python/start-prod.sh`
-* Alternatively, use `docker-compose` with `./scripts/api-python/start-prod-docker-compose.sh`
+* Build images and run containers for the UI and Python Flask API with `./scripts/prod/api-python/start.sh`
+* Alternatively, use `docker-compose` with `./scripts/prod/api-python/start-docker-compose.sh`
 
 **"Production JSON Server"**
 
-* Build images and run containers for the UI and JSON Server API with `./scripts/api-json-server/start-prod.sh`
-* Alternatively, use `docker-compose` with `./scripts/api-json-server/start-prod-docker-compose-api-json-server.sh`
+* Build images and run containers for the UI and JSON Server API with `./scripts/prod/api-json-server/start.sh`
+* Alternatively, use `docker-compose` with `./scripts/prod/api-json-server/start-docker-compose.sh`
 
 **Other**
 

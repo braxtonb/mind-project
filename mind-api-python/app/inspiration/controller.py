@@ -34,7 +34,7 @@ class InspirationByIdResource(Resource):
         if inspiration:
             return inspiration, 200
 
-        return f'Inspiration ${inspiration_id} not found', 400
+        return f"Inspiration ${inspiration_id} not found", 400
 
     def put(self, inspiration_id):
         inspiration_parser = InspirationBodyParser()
@@ -45,7 +45,7 @@ class InspirationByIdResource(Resource):
         if inspiration:
             return inspiration, 201
 
-        return f'Inspiration ${inspiration_id} not found', 400
+        return f"Inspiration ${inspiration_id} not found", 400
 
     def delete(self, inspiration_id):
         inspiration = InspirationService.delete(inspiration_id)
@@ -53,4 +53,4 @@ class InspirationByIdResource(Resource):
         if inspiration:
             return inspiration, 201
 
-        return f'Inspiration ${inspiration_id} not found', 400
+        return f"Inspiration ${inspiration_id} not found", 400

@@ -10,7 +10,7 @@
     "buildImage:local": "docker build -f Dockerfile.local -t mind-api-json-server:local .",
     "runContainer:local": "docker run -d --rm -p 4000:4000 -v `PWD`:/usr/src/app mind-api-json-server:local",
     "buildImage:prod": "docker build -t mind-api-json-server:prod .",
-    "runContainer:prod": "docker run -d --rm -p 4000:4000 -v `PWD`:/usr/src/app mind-api-json-server:prod"
+    "runContainer:prod": "docker run -d --rm -p 4000:4000 mind-api-json-server:prod"
   },
   "ntl": {
     "descriptions": {

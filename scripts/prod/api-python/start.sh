@@ -1,7 +1,7 @@
 # Build the docker images
-npm run buildImage:prod --prefix ./mind-api-python
+./scripts/prod/api-python/build-image.sh
 npm run buildImage:prod --prefix ./mind
 
 # Run docker containers
-npm run runContainer:prod --prefix ./mind-api-python
+./scripts/prod/api-python/run-container.sh
 npm run runContainer:prod --prefix ./mind

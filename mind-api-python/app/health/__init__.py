@@ -8,4 +8,4 @@ BASE_ROUTE = "health"
 def reigster_routes(api: Api, app: Flask, root=""):
     from .controller import HealthResource
 
-    api.add_resource(HealthResource, f'{root}/{BASE_ROUTE}')
+    api.add_resource(HealthResource, f"{root}/{BASE_ROUTE}")
