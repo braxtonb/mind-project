@@ -25,6 +25,8 @@ Mind enables storing image and video references used as inspiration for the new 
 
 **Backend**
 
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/)
 - [JSON Server](https://github.com/typicode/json-server)
 
 **Infrastructure**
