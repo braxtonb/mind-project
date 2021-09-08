@@ -5,16 +5,19 @@ from typing import List, Type
 class BaseConfig:
     CONFIG_NAME = "base"
     TOTAL_COUNT_HEADER = "x-total-count"
+    DEBUG = True
 
 
 class LocalConfig:
     CONFIG_NAME = "local"
     TOTAL_COUNT_HEADER = "x-total-count"
+    DEBUG = True
 
 
 class ProductionConfig:
     CONFIG_NAME = "prod"
     TOTAL_COUNT_HEADER = "x-total-count"
+    DEBUG = False
 
 
 EXPORT_CONFIGS: List[Type[BaseConfig]] = [
