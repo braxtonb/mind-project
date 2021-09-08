@@ -110,7 +110,7 @@ const newFormSchema = Yup.object().shape({
 
 export interface NewFormProps {
   isLoading?: boolean;
-  onSubmit: (values: InspirationType) => void;
+  onSubmit: (values: InspirationType) => Promise<void>;
 }
 
 const NewForm: React.FC<NewFormProps> = ({ isLoading, onSubmit }) => {
@@ -118,11 +118,11 @@ const NewForm: React.FC<NewFormProps> = ({ isLoading, onSubmit }) => {
 
   const _handleSubmit = async (values: InspirationType) => {
     try {
-      onSubmit(values);
+      await onSubmit(values);
 
       formik.resetForm();
     } catch (error) {
-      console.error('[NewForm] there was an error');
+      console.error('[NewForm] unable to create inspiration');
     }
   };
 

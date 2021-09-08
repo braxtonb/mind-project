@@ -7,8 +7,18 @@ services:
     ports:
       - 3000:80
 
-  json-server:
+  api-python:
     build:
-      context: ./mind-json-server
+      context: ./mind-api-python
     ports:
       - 4000:4000
+    profiles:
+      - api-python
+
+  api-json-server:
+    build:
+      context: ./mind-api-json-server
+    ports:
+      - 4000:4000
+    profiles:
+      - api-json-server

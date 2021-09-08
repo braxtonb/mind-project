@@ -4,6 +4,8 @@
 
 I have an idea for a new project and wanted a place to store all the things that have served as inspiration.
 
+Mind enables storing image and video references used as inspiration for the new project.
+
 ## Technology Stack
 
 **Frontend**
@@ -38,24 +40,30 @@ I have an idea for a new project and wanted a place to store all the things that
 
 (Optional) Update permissions to all shell scripts in the `scripts` directory
 ```shell
-chmod +rwx scripts/*
+chmod +rwx scripts/**/*
 ```
 
 **Local dev**
 
 1. Install dependencies with `./scripts/setup-local.sh`
-2. Start containers with `docker-compose up`
+2a. Start ui and python flask API containers with `docker-compose --profile api-python up`
+2b. Start ui and json server API containers with `docker-compose --profile api-json-server up`
 
-**"Production"**
+**"Production Python Flask API"**
 
-* Build images and run containers for the UI and JSON Server API with `./scripts/start-prod.sh`
-* Alternatively, use `docker-compose` with `./scripts/start-prod-docker-compose.sh`
+* Build images and run containers for the UI and Python Flask API with `./scripts/prod/api-python/start.sh`
+* Alternatively, use `docker-compose` with `./scripts/prod/api-python/start-docker-compose.sh`
+
+**"Production JSON Server"**
+
+* Build images and run containers for the UI and JSON Server API with `./scripts/prod/api-json-server/start.sh`
+* Alternatively, use `docker-compose` with `./scripts/prod/api-json-server/start-docker-compose.sh`
 
 **Other**
 
 If interested, everything can be run locally using `npm run dev` scripts.
 ```shell
-npm run dev --prefix ./mind-json-server
+npm run dev --prefix ./mind-api-json-server
 npm run dev --prefix ./mind
 ```
 

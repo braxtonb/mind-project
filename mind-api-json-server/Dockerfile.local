@@ -13,7 +13,7 @@ WORKDIR ${APP_DIR}
 
 
 # No need for further instructions
-# since the entire mind-json-server is mounted for local
+# since the entire mind-api-json-server directory is mounted for local
 
 EXPOSE 4000
 

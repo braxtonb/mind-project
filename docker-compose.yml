@@ -11,12 +11,23 @@ services:
     volumes:
       - ./mind:/usr/src/app
 
-  json-server:
+  api-python:
     build:
-      context: ./mind-json-server
+      context: ./mind-api-python
+      dockerfile: Dockerfile.local
+    ports:
+      - 4000:4000
+    profiles:
+      - api-python
+
+  api-json-server:
+    build:
+      context: ./mind-api-json-server
       dockerfile: Dockerfile.local
     command: npm start
     ports:
       - 4000:4000
     volumes:
-      - ./mind-json-server:/usr/src/app
+      - ./mind-api-json-server:/usr/src/app
+    profiles:
+      - api-json-server
