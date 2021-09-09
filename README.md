@@ -25,6 +25,7 @@ Mind enables storing image and video references used as inspiration for the new 
 
 **Backend**
 
+- [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/)
 - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
