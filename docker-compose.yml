@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  ui:
+  ui-local:
     build:
       context: ./mind
       dockerfile: Dockerfile.local
@@ -11,16 +11,7 @@ services:
     volumes:
       - ./mind:/usr/src/app
 
-  api-python:
-    build:
-      context: ./mind-api-python
-      dockerfile: Dockerfile.local
-    ports:
-      - 4000:4000
-    profiles:
-      - api-python
-
-  api-json-server:
+  api-json-server-local:
     build:
       context: ./mind-api-json-server
       dockerfile: Dockerfile.local
@@ -31,3 +22,39 @@ services:
       - ./mind-api-json-server:/usr/src/app
     profiles:
       - api-json-server
+
+  api-python-local:
+    build:
+      context: ./mind-api-python
+      dockerfile: Dockerfile.local
+    ports:
+      - 4000:4000
+    networks:
+      - mindnet
+    profiles:
+      - api-python
+    depends_on:
+      - db-postgres-local
+
+  db-postgres-local:
+    container_name: mind-postgresql-local
+    image: postgres
+    volumes:
+      # - ./mind-postgresql/init/:/docker-entrypoint-initdb.d/
+      - postgresdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mind
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    ports:
+      - 5432:5432
+    networks:
+      - mindnet
+    profiles:
+      - api-python
+
+volumes:
+  postgresdata:
+
+networks:
+  mindnet:

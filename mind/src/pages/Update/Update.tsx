@@ -27,7 +27,7 @@ const Update: React.FC = () => {
   const classes = useStyles();
   const { id } = useParams<UpdateParams>();
 
-  if (!id || isNaN(+id)) {
+  if (!id) {
     return (
       <PageLayout>
         <Grid
@@ -63,7 +63,7 @@ const Update: React.FC = () => {
         </Grid>
 
         <Grid container item>
-          <UpdateForm inspirationId={+id} />
+          <UpdateForm inspirationId={id} />
         </Grid>
       </Grid>
     </PageLayout>

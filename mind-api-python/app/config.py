@@ -6,18 +6,21 @@ class BaseConfig:
     CONFIG_NAME = "base"
     TOTAL_COUNT_HEADER = "x-total-count"
     DEBUG = True
+    # usually database credentials would be read from a .env file
+    # but for demonstration purposes it is put in the config file
+    SQLALCHEMY_DATABASE_URI = "postgresql://admin:password@db-postgres-local:5432/mind"
+    # not using Flask-SQLAlchemy's event system currently
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-class LocalConfig:
+class LocalConfig(BaseConfig):
     CONFIG_NAME = "local"
-    TOTAL_COUNT_HEADER = "x-total-count"
-    DEBUG = True
 
 
-class ProductionConfig:
+class ProductionConfig(BaseConfig):
     CONFIG_NAME = "prod"
-    TOTAL_COUNT_HEADER = "x-total-count"
     DEBUG = False
+    SQLALCHEMY_DATABASE_URI = "postgresql://admin:password@db-postgres-prod:5432/mind"
 
 
 EXPORT_CONFIGS: List[Type[BaseConfig]] = [

@@ -11,15 +11,15 @@ import { INSPIRATION_MEDIA_TYPE } from './inspiration-contants';
 
 // shared
 export interface InspirationType {
-  id?: number;
+  id?: string;
   name: string;
   creatorName: string;
   url: string;
   mediaType: INSPIRATION_MEDIA_TYPE;
   mediaURL: string;
   description?: string;
-  createdAt?: number;
-  updatedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 /**

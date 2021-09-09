@@ -13,7 +13,7 @@ import type { InspirationType } from '../../../../constants/types';
 const { useAlertInspirationContext } = AlertContextHooks;
 
 interface UpdateFormContainerProps {
-  inspirationId: number;
+  inspirationId: string;
 }
 
 const UpdateFormContainer: React.FC<UpdateFormContainerProps> = ({
@@ -36,7 +36,7 @@ const UpdateFormContainer: React.FC<UpdateFormContainerProps> = ({
       alertDispatch.updateInspirationLoading(values.name);
 
       // useMutation from react query here maybe
-      const now = +new Date();
+      const now = new Date().toUTCString();
       const inspiration = {
         ...values,
         updatedAt: now,

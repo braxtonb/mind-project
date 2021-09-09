@@ -2,7 +2,7 @@ import { useMutation, useQuery } from 'react-query';
 import { InspirationType } from '../../constants/types';
 import InspirationClient from './inspirations.client';
 
-export const useInspirationById = (id: number, baseURL?: string) => {
+export const useInspirationById = (id: string, baseURL?: string) => {
   return useQuery(['/inspirations/', id, baseURL], () =>
     InspirationClient.getInspirationById(id, baseURL),
   );

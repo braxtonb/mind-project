@@ -7,7 +7,7 @@ interface GetPaginatedInspirationsArgs {
 }
 
 interface RemoveInspirationByIdArgs {
-  id: number;
+  id: string;
   inspirations: InspirationType[];
 }
 

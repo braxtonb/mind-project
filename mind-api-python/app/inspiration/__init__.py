@@ -10,4 +10,4 @@ def reigster_routes(api: Api, app: Flask, root=""):
 
     api.add_resource(InspirationsResource, f"{root}/{BASE_ROUTE}")
     api.add_resource(InspirationByIdResource,
-                     f"{root}/{BASE_ROUTE}/<int:inspiration_id>")
+                     f"{root}/{BASE_ROUTE}/<string:inspiration_id>")

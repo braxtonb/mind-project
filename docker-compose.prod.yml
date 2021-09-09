@@ -1,24 +1,51 @@
 version: '3'
 
 services:
-  ui:
+  ui-prod:
     build:
       context: ./mind
     ports:
       - 3000:80
 
-  api-python:
-    build:
-      context: ./mind-api-python
-    ports:
-      - 4000:4000
-    profiles:
-      - api-python
-
-  api-json-server:
+  api-json-server-prod:
     build:
       context: ./mind-api-json-server
     ports:
       - 4000:4000
     profiles:
       - api-json-server
+
+  api-python-prod:
+    build:
+      context: ./mind-api-python
+    ports:
+      - 4000:4000
+    networks:
+      - mindnet
+    profiles:
+      - api-python
+    depends_on:
+      - db-postgres-prod
+
+  db-postgres-prod:
+    container_name: mind-postgresql-prod
+    image: postgres
+    volumes:
+      # - ./mind-postgresql/init/:/docker-entrypoint-initdb.d/
+      - postgresdataprod:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mind
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+    ports:
+      - 5432:5432
+    networks:
+      - mindnet
+    profiles:
+      - api-python
+
+volumes:
+  postgresdataprod:
+
+networks:
+  mindnet:
