@@ -87,7 +87,7 @@ Run `npm run storybook --prefix ./mind` to start storybook for isolated componen
 
 ## Available NPM Scripts
 
-Looking for what each npm script does? Try `npm run ntl` to select a script to run from a list of commands and their descriptions.
+Looking for what each npm script does? While in the `mind` or `mind-api-json-server` directory, try `npm run ntl` to select a script to run from a list of commands and their descriptions.
 
 ## Useful Links
 
