@@ -13,7 +13,7 @@ class PaginationRequestParser:
         self.add_arguments()
 
     def add_arguments(self):
-        self.parser.add_argument("_page",  default="1", type=int, location="args")
+        self.parser.add_argument("_page",  default="1",  type=int, location="args")
         self.parser.add_argument("_limit", default="12", type=int, location="args")
 
     def parse_args(self) -> PaginationArgsInterface:
