@@ -1,6 +1,10 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+db = SQLAlchemy()
 
 
 def create_app():
@@ -13,5 +17,8 @@ def create_app():
     api = Api(mind_app)
 
     register_routes(api, mind_app)
+    db.init_app(mind_app)
+    Migrate(mind_app, db)
+    db.create_all(app=mind_app)
 
     return mind_app

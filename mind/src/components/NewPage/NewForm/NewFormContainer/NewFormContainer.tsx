@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import NewForm from '../NewForm';
 import InspirationClient from '../../../../clients/inspirations/inspirations.client';
 import { AlertContextHooks } from '../../../../contexts/AlertContext';
@@ -14,10 +15,10 @@ const NewFormContainer: React.FC = () => {
       alertDispatch.addInspirationLoading(values.name);
 
       // useMutation from react query here maybe
-      const now = +new Date();
+      const now = new Date().toUTCString();
       const inspiration = {
         ...values,
-        id: now,
+        id: uuidv4(),
         createdAt: now,
         updatedAt: now,
       };

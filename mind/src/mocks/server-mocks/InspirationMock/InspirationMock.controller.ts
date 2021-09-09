@@ -39,7 +39,7 @@ class FakeInspirationController {
     ctx: RestContext,
   ) => {
     this.inspirations = this.inspirationService.removeInspirationById({
-      id: parseInt(req.params.id, 10),
+      id: req.params.id,
       inspirations: this.inspirations,
     });
 

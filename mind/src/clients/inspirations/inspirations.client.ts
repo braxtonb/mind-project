@@ -57,7 +57,7 @@ class InspirationClient {
   };
 
   public static getInspirationById = async (
-    id: number,
+    id: string,
     baseURL = InspirationClient.DEFAULT_BASE_URL,
   ) => {
     try {
@@ -76,10 +76,6 @@ class InspirationClient {
     baseURL = InspirationClient.DEFAULT_BASE_URL,
   ) => {
     try {
-      if (!inspiration) {
-        throw new Error('[addInspiration] missing inspiration argument');
-      }
-
       const URL = `${baseURL}/inspirations`;
       const body = JSON.stringify({ ...inspiration });
       const fetchConfig = {
@@ -126,15 +122,15 @@ class InspirationClient {
   };
 
   public static removeInspirationById = async (
-    inspirationId: number,
+    id: string,
     baseURL = InspirationClient.DEFAULT_BASE_URL,
   ) => {
     try {
-      if (!inspirationId) {
+      if (!id) {
         throw new Error('[removeInspirationById] missing inspiration ID');
       }
 
-      const URL = `${baseURL}/inspirations/${inspirationId}`;
+      const URL = `${baseURL}/inspirations/${id}`;
       const fetchConfig = {
         method: 'DELETE',
         headers: {

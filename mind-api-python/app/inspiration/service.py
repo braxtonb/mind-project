@@ -1,45 +1,54 @@
-from db import inspirations
 from typing import List
+from app import db
 
-from .interface import InspirationInterface
+from .model import Inspiration
+from .interface import InspirationInterface, PaginatedInspirationInterface
 
 
 class InspirationService:
     @staticmethod
-    def get_paginated_list(page: int, limit: int) -> List[InspirationInterface]:
-        low_index = (page - 1) * limit
-        high_index = page * limit
-        paginated_inspirations = inspirations[low_index:high_index]
+    def get_paginated_list(page: int, limit: int) -> PaginatedInspirationInterface:
+        paginated_inspirations = Inspiration.query.paginate(page, limit, error_out=False)
 
-        return paginated_inspirations
+        return {
+            "count": paginated_inspirations.total,
+            "inspirations": paginated_inspirations.items
+        }
 
-    @staticmethod
-    def create(inspiration: InspirationInterface) -> None:
-        inspirations.append(inspiration)
 
     @staticmethod
-    def get(inspiration_id: int) -> InspirationInterface:
-        for inspiration in inspirations:
-            if inspiration["id"] == inspiration_id:
-                return inspiration
+    def create(inspiration: InspirationInterface) -> Inspiration:
+        new_inspiration = Inspiration(**inspiration)
 
-        return None
+        db.session.add(new_inspiration)
+        db.session.commit()
 
-    @staticmethod
-    def update(inspiration_id: int, new_data: InspirationInterface) -> InspirationInterface:
-        for inspiration in inspirations:
-            if inspiration["id"] == inspiration_id:
-                inspiration.update(new_data)
-
-                return inspiration
-
-        return None
+        return new_inspiration
 
     @staticmethod
-    def delete(inspiration_id: int) -> InspirationInterface:
-        for index, inspiration in enumerate(inspirations):
-            if inspiration["id"] == inspiration_id:
-                return inspirations.pop(index)
+    def get(inspiration_id: int) -> Inspiration:
+        return Inspiration.query.get(inspiration_id)
 
-        return None
+    @staticmethod
+    def update(inspiration_id: int, changes: InspirationInterface) -> Inspiration:
+        inspiration = InspirationService.get(inspiration_id)
 
+        if not inspiration:
+            return inspiration
+
+        inspiration.update(changes)
+        db.session.commit()
+
+        return inspiration
+
+    @staticmethod
+    def delete(inspiration_id: int) -> Inspiration:
+        inspiration = InspirationService.get(inspiration_id)
+
+        if not inspiration:
+            return inspiration
+
+        db.session.delete(inspiration)
+        db.session.commit()
+
+        return inspiration
