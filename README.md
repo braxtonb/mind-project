@@ -57,7 +57,7 @@ chmod +rwx scripts/**/*
 
 # For example
 
-python3 -m venv .venv && source .venv/bin/activate.
+python3 -m venv .venv && source .venv/bin/activate
 ```
 3a. Start UI, Python Flask API, and PostgreSQL containers with `docker-compose --profile api-python up --build`
 
