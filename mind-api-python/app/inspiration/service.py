@@ -8,13 +8,13 @@ from .interface import InspirationInterface, PaginatedInspirationInterface
 class InspirationService:
     @staticmethod
     def get_paginated_list(page: int, limit: int) -> PaginatedInspirationInterface:
-        paginated_inspirations = Inspiration.query.paginate(page, limit, error_out=False)
+        paginated_inspirations = Inspiration.query.order_by(
+            Inspiration.createdAt.desc()).paginate(page, limit, error_out=False)
 
         return {
             "count": paginated_inspirations.total,
             "inspirations": paginated_inspirations.items
         }
-
 
     @staticmethod
     def create(inspiration: InspirationInterface) -> Inspiration:

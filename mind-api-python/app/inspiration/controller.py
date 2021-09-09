@@ -1,7 +1,5 @@
 from flask_restful import Resource, marshal_with
-from typing import List
 
-from db import inspirations
 from app.config import active_config
 from app.shared.parsers import PaginationRequestParser, InspirationBodyParser
 from .interface import PaginatedInspirationInterface

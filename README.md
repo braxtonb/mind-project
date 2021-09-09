@@ -50,8 +50,17 @@ chmod +rwx scripts/**/*
 **Local dev**
 
 1. Install dependencies with `./scripts/setup-local.sh`
-2a. Start UI, Python Flask API, and PostgreSQL containers with `docker-compose --profile api-python up --build`
-2b. Start UI and JSON Server API containers with `docker-compose --profile api-json-server up`
+2. (Optional) It is highly recommended to setup a python virtual environment locally.
+```
+<python version> -m venv .venv && source .venv/bin/activate
+
+# For example
+
+python3 -m venv .venv && source .venv/bin/activate.
+```
+3a. Start UI, Python Flask API, and PostgreSQL containers with `docker-compose --profile api-python up --build`
+
+3b. Start UI and JSON Server API containers with `docker-compose --profile api-json-server up`
 
 **"Production Python Flask API"**
 
@@ -65,7 +74,7 @@ chmod +rwx scripts/**/*
 
 **Other**
 
-If interested, the UI and  can be run locally using `npm run dev` scripts.
+If interested, the UI and JSON Server API can be run locally using `npm run dev` scripts.
 ```shell
 npm run dev --prefix ./mind-api-json-server
 npm run dev --prefix ./mind
@@ -73,7 +82,7 @@ npm run dev --prefix ./mind
 
 ## Mind Component Library
 
-Run `npm run storybook --prefix ./mind` to start storybook for isolated component development or viewing a component gallery.
+Run `npm run storybook --prefix ./mind` to start storybook for isolated component development or viewing a component gallery. Storybook has been configured to make requests to a [mock service worker](https://mswjs.io/) instead of a live API to fetch data.
 
 ## Available NPM Scripts
 
