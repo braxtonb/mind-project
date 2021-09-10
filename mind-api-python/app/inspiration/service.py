@@ -1,6 +1,4 @@
-from typing import List
 from app import db
-
 from .model import Inspiration
 from .interface import InspirationInterface, PaginatedInspirationInterface
 
@@ -26,11 +24,11 @@ class InspirationService:
         return new_inspiration
 
     @staticmethod
-    def get(inspiration_id: int) -> Inspiration:
+    def get(inspiration_id: str) -> Inspiration:
         return Inspiration.query.get(inspiration_id)
 
     @staticmethod
-    def update(inspiration_id: int, changes: InspirationInterface) -> Inspiration:
+    def update(inspiration_id: str, changes: InspirationInterface) -> Inspiration:
         inspiration = InspirationService.get(inspiration_id)
 
         if not inspiration:
@@ -42,7 +40,7 @@ class InspirationService:
         return inspiration
 
     @staticmethod
-    def delete(inspiration_id: int) -> Inspiration:
+    def delete(inspiration_id: str) -> Inspiration:
         inspiration = InspirationService.get(inspiration_id)
 
         if not inspiration:

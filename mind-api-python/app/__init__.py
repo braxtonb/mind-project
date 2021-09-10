@@ -3,8 +3,10 @@ from flask_restful import Api
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_caching import Cache
 
 db = SQLAlchemy()
+cache = Cache()
 
 
 def create_app():
@@ -14,6 +16,8 @@ def create_app():
     mind_app = Flask(__name__)
     mind_app.config.from_object(active_config)
     CORS(mind_app, expose_headers=[active_config.TOTAL_COUNT_HEADER])
+    cache.init_app(app=mind_app)
+    cache.clear()
     api = Api(mind_app)
 
     register_routes(api, mind_app)

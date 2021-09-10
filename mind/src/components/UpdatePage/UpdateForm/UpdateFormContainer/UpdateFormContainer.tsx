@@ -53,21 +53,21 @@ const UpdateFormContainer: React.FC<UpdateFormContainerProps> = ({
     }
   };
 
-  if (!data) {
-    return (
-      <Grid container item spacing={3} justifyContent="center">
-        <Typography align="center">
-          Loading inspiration...
-        </Typography>
-      </Grid>
-    );
-  }
-
   if (isError) {
     return (
       <Grid container item spacing={3} justifyContent="center">
         <Typography align="center">
           Unable to retrieve inspiration. Please refresh your browser.
+        </Typography>
+      </Grid>
+    );
+  }
+
+  if (!data) {
+    return (
+      <Grid container item spacing={3} justifyContent="center">
+        <Typography align="center">
+          Loading inspiration...
         </Typography>
       </Grid>
     );

@@ -35,6 +35,7 @@ services:
       - api-python
     depends_on:
       - db-postgres-local
+      - db-redis-local
 
   db-postgres-local:
     container_name: mind-postgresql-local
@@ -48,6 +49,17 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
     ports:
       - 5432:5432
+    networks:
+      - mindnet
+    profiles:
+      - api-python
+
+
+  db-redis-local:
+    container_name: mind-redis-local
+    image: redis:alpine
+    ports:
+      - 6379:6379
     networks:
       - mindnet
     profiles:
