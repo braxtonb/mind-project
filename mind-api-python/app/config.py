@@ -11,6 +11,10 @@ class BaseConfig:
     SQLALCHEMY_DATABASE_URI = "postgresql://admin:password@db-postgres-local:5432/mind"
     # not using Flask-SQLAlchemy's event system currently
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    CACHE_TYPE= "RedisCache"
+    CACHE_KEY_PREFIX = "mind_cache_key"
+    CACHE_REDIS_URL = "redis://db-redis-local:6379/0"
+    CACHE_DEFAULT_TIMEOUT=500
 
 
 class LocalConfig(BaseConfig):
@@ -21,6 +25,7 @@ class ProductionConfig(BaseConfig):
     CONFIG_NAME = "prod"
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = "postgresql://admin:password@db-postgres-prod:5432/mind"
+    CACHE_REDIS_URL = "redis://db-redis-prod:6379/0"
 
 
 EXPORT_CONFIGS: List[Type[BaseConfig]] = [
