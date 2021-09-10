@@ -38,6 +38,9 @@ Mind enables storing image and video references used as inspiration for the new 
 - [Docker compose](https://docs.docker.com/compose/)
 - [Apache web server](https://httpd.apache.org/)
 
+## Example
+
+https://user-images.githubusercontent.com/13091519/132806081-ae931383-f976-457e-82e4-62bc522ccfcd.mov
 
 ## Setup
 
