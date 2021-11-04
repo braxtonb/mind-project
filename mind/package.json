@@ -40,7 +40,8 @@
     "buildImage:prod": "docker build -t mind:prod .",
     "runContainer:prod": "docker run -d --rm -p 3000:80 mind:prod",
     "storybook": "msw init public/ && start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'"
   },
   "ntl": {
     "descriptions": {
@@ -56,22 +57,6 @@
       "storybook": "Start storybook for isolated component development or viewing component gallery",
       "build-storybook": "Build storybook for production"
     }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   },
   "browserslist": {
     "production": [
@@ -98,6 +83,17 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.12",
     "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "msw": "^0.35.0",
     "msw-storybook-addon": "^1.2.0",
     "ntl": "^5.1.0"
