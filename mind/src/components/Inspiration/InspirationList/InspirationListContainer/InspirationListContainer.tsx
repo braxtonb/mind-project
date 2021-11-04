@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import InspirationClient from '../../../../clients/inspirations/inspirations.client';
 import { usePaginatedInspirations } from '../../../../clients/inspirations/inspirations.hooks';
 import { INSPIRATION_LIST_PAGE_SIZE } from '../../../../constants/inspiration-contants';

@@ -59,7 +59,7 @@ const MobileTopNav: React.FC = () => {
       setDisplayMobileTopNavDrawer(open);
     };
 
-  const _handleMenuButtonClick = (event: React.MouseEvent) => {
+  const _handleMenuButtonClick = () => {
     setDisplayMobileTopNavDrawer(!displayMobileTopNavDrawer);
   };
 

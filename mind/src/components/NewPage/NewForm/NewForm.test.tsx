@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import NewForm from './NewForm';
 import { createFakeInspiration } from '../../../mocks/inspiration-mocks';
 
@@ -12,21 +7,27 @@ class GetNewFormElements {
   public static getNameField() {
     return screen.getByRole('textbox', { name: /^name$/i });
   }
+
   public static getCreatorNameField() {
     return screen.getByRole('textbox', { name: /creator name/i });
   }
+
   public static getUrlField() {
     return screen.getByRole('textbox', { name: /site url/i });
   }
+
   public static getMediaTypeField() {
     return screen.getByRole('button', { name: /inspiration type/i });
   }
+
   public static getMediaUrlField() {
     return screen.getByRole('textbox', { name: /media url/i });
   }
+
   public static getDescriptionField() {
     return screen.getByRole('textbox', { name: /description/i });
   }
+
   public static getAddButton() {
     return screen.getByRole('button', { name: /add/i });
   }

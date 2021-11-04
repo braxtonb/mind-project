@@ -1,17 +1,17 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVert from '@material-ui/icons/MoreVert';
-import { InspirationType } from '../../../constants/types';
-import LightTooltip from '../../LightTooltip';
 import Button from '@material-ui/core/Button';
 import EditRounded from '@material-ui/icons/EditRounded';
 import DeleteRounded from '@material-ui/icons/DeleteRounded';
+import LightTooltip from '../../LightTooltip';
+import { InspirationType } from '../../../constants/types';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   container: {},
   centeredGrid: {
     display: 'flex',

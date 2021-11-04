@@ -1,14 +1,14 @@
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Pagination from '@material-ui/lab/Pagination';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Inspiration from '../Inspiration';
 import Loader from '../../Loader';
 import theme from '../../../constants/theme';
 
 import type { InspirationType } from '../../../constants/types';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   paginationGrid: {
     'div&.Search-Pagination': {
       padding: 0,

@@ -9,7 +9,10 @@ interface AlertProviderProps {
 }
 
 const AlertProvider: React.FC<AlertProviderProps> = ({ children }) => {
-  const [alertState, alertDispatch] = useReducer(alertReducer, INITIAL_ALERT_STATE);
+  const [alertState, alertDispatch] = useReducer(
+    alertReducer,
+    INITIAL_ALERT_STATE,
+  );
   const alertProviderValue: AlertContextType = {
     alertState,
     alertDispatch,

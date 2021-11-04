@@ -33,7 +33,7 @@ describe('AlertContext.reducer', () => {
       const { result, waitForNextUpdate } = renderHook(() =>
         useReducer(alertReducer, initialAlertState),
       );
-      const [_, dispatch] = result.current;
+      const [, dispatch] = result.current;
 
       dispatch({ type: LOADING__ALERT, payload: alert });
       await waitForNextUpdate();

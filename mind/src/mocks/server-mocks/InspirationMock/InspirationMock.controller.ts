@@ -12,20 +12,20 @@ import type { InspirationType } from '../../../constants/types';
 
 class FakeInspirationController {
   private inspirationService = new FakeInspirationService();
+
   private inspirations: InspirationType[] = createFakeInspirationList(14);
 
   public handleGetInspirations = (
     req: RestRequest<DefaultRequestBody, RequestParams>,
-    res: ResponseComposition<any>,
+    res: ResponseComposition<InspirationType[]>,
     ctx: RestContext,
   ) => {
-    const paginatedInspirations = this.inspirationService.getPaginatedInspirations(
-      {
+    const paginatedInspirations =
+      this.inspirationService.getPaginatedInspirations({
         page: parseInt(req.url.searchParams.get('_page') ?? '1', 10),
         limit: parseInt(req.url.searchParams.get('_limit') ?? '12', 10),
         inspirations: this.inspirations,
-      },
-    );
+      });
 
     return res(
       ctx.set('x-total-count', this.inspirations.length.toString()),
@@ -35,7 +35,7 @@ class FakeInspirationController {
 
   public handleDeleteInspirationById = (
     req: RestRequest<DefaultRequestBody, RequestParams>,
-    res: ResponseComposition<any>,
+    res: ResponseComposition<Record<string, never>>,
     ctx: RestContext,
   ) => {
     this.inspirations = this.inspirationService.removeInspirationById({

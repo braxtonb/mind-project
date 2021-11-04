@@ -9,7 +9,7 @@ export const NAME_FIELD_LENGTHS = {
   },
   BETWEEN: {
     DEFAULT_HINT_MESSAGE: 'Name must be between 3 and 64 characters',
-  }
+  },
 };
 
 export const DESCRIPTION_FIELD_LENGTHS = {
@@ -23,7 +23,7 @@ export const DESCRIPTION_FIELD_LENGTHS = {
   },
   BETWEEN: {
     DEFAULT_HINT_MESSAGE: 'Description must be between 3 and 200 characters',
-  }
+  },
 };
 
 export const LINK_FIELD_LENGTHS = {
@@ -37,5 +37,5 @@ export const LINK_FIELD_LENGTHS = {
   },
   BETWEEN: {
     DEFAULT_HINT_MESSAGE: 'Link must be between 3 and 2048 characters',
-  }
+  },
 };

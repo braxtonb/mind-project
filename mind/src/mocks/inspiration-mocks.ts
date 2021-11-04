@@ -12,7 +12,9 @@ const _createDefaultFakeInspiration = (): InspirationType => {
     creatorName: `${faker.name.firstName()} ${faker.name.lastName()}`,
     url: 'some-url',
     mediaType: INSPIRATION_MEDIA_TYPE.IMAGE,
-    mediaURL: `${faker.image.nature()}?random=${Math.round(Math.random() * 1000)}`,
+    mediaURL: `${faker.image.nature()}?random=${Math.round(
+      Math.random() * 1000,
+    )}`,
     description: faker.random.words(4),
     createdAt: now,
     updatedAt: now,

@@ -4,6 +4,7 @@ import FakeInspirationController from './InspirationMock.controller';
 
 class FakeInspirationRouter {
   private inspirationController = new FakeInspirationController();
+
   private DEFAULT_BASE_URL = API_URL;
 
   public createGetInspirationsRoute = () => {

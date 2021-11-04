@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
-import Meta, { DefaultUpdateForm as UpdateFormStory } from './UpdateForm.stories';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { composeStory } from '@storybook/testing-react';
+import Meta, {
+  DefaultUpdateForm as UpdateFormStory,
+} from './UpdateForm.stories';
 
 // reuse storybook for unit test
 const UpdateForm = composeStory(UpdateFormStory, Meta);
@@ -15,21 +12,27 @@ class GetUpdateFormElements {
   public static getNameField() {
     return screen.getByRole('textbox', { name: /^name$/i });
   }
+
   public static getCreatorNameField() {
     return screen.getByRole('textbox', { name: /creator name/i });
   }
+
   public static getUrlField() {
     return screen.getByRole('textbox', { name: /site url/i });
   }
+
   public static getMediaTypeField() {
     return screen.getByRole('button', { name: /inspiration type/i });
   }
+
   public static getMediaUrlField() {
     return screen.getByRole('textbox', { name: /media url/i });
   }
+
   public static getDescriptionField() {
     return screen.getByRole('textbox', { name: /description/i });
   }
+
   public static getSaveButton() {
     return screen.getByRole('button', { name: /save/i });
   }

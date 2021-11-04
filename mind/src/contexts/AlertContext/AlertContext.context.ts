@@ -5,7 +5,7 @@ import { INITIAL_ALERT_STATE } from './AlertContext.reducer';
 
 const initialContext: AlertContextType = {
   alertState: INITIAL_ALERT_STATE,
-  alertDispatch: () => {},
+  alertDispatch: () => null,
 };
 
 const AlertContext = React.createContext(initialContext);

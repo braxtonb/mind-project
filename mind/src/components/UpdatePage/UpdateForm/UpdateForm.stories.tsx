@@ -15,9 +15,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<UpdateFormProps> = (args) => (
-  <UpdateForm {...args} />
-);
+const Template: Story<UpdateFormProps> = (args) => <UpdateForm {...args} />;
 
 export const DefaultUpdateForm = Template.bind({});
 DefaultUpdateForm.args = {

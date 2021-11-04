@@ -7,7 +7,7 @@ export default {
   title: 'Components/Header',
 } as Meta;
 
-const Template: Story<HeaderProps> = (args) => <Header {...args} />
+const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
 export const HeaderWithoutSubtitle = Template.bind({});
 HeaderWithoutSubtitle.args = {

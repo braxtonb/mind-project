@@ -36,7 +36,8 @@ const About: React.FC = () => {
             things that have served as inspiration.
           </Typography>
           <Typography paragraph>
-            Mind enables storing image and video references used as inspiration for the new project.
+            Mind enables storing image and video references used as inspiration
+            for the new project.
           </Typography>
         </Grid>
       </Grid>
