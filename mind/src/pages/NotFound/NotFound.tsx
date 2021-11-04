@@ -25,7 +25,12 @@ const NotFound: React.FC = () => {
         className={classes.root}
         spacing={3}
       >
-        <Grid container direction="column" alignItems="center" className={classes.paragraphWrapper}>
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          className={classes.paragraphWrapper}
+        >
           <Typography variant="h3" align="center">
             404
           </Typography>

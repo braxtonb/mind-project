@@ -9,14 +9,22 @@ describe('Header', () => {
   it('should render Header with title and subheader', () => {
     render(<HeaderWithSubtitle />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(HeaderWithSubtitle.args?.title as string);
-    expect(screen.getByText(HeaderWithSubtitle.args?.subheader as string)).toBeInTheDocument();
+    expect(screen.getByRole('heading')).toHaveTextContent(
+      HeaderWithSubtitle.args?.title as string,
+    );
+    expect(
+      screen.getByText(HeaderWithSubtitle.args?.subheader as string),
+    ).toBeInTheDocument();
   });
 
   it('should render Header only title', () => {
     render(<HeaderWithoutSubtitle />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(HeaderWithoutSubtitle.args?.title as string);
-    expect(screen.queryByText(HeaderWithSubtitle.args?.subheader as string)).not.toBeInTheDocument();
+    expect(screen.getByRole('heading')).toHaveTextContent(
+      HeaderWithoutSubtitle.args?.title as string,
+    );
+    expect(
+      screen.queryByText(HeaderWithSubtitle.args?.subheader as string),
+    ).not.toBeInTheDocument();
   });
 });

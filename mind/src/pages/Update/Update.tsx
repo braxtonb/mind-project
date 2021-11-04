@@ -2,12 +2,12 @@ import Grid from '@material-ui/core/Grid';
 import { useParams } from 'react-router-dom';
 import cn from 'classnames';
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import {
   UpdateHeader,
   UpdateFormContainer as UpdateForm,
 } from '../../components/UpdatePage';
 import { PageLayout } from '../../components/PageLayout';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

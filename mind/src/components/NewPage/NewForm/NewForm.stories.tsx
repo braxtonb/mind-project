@@ -14,9 +14,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<NewFormProps> = (args) => (
-  <NewForm {...args} />
-);
+const Template: Story<NewFormProps> = (args) => <NewForm {...args} />;
 
 export const DefaultNewForm = Template.bind({});
 DefaultNewForm.args = {

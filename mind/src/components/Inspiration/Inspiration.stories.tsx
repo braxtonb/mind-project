@@ -16,9 +16,7 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<InspirationProps> = (args) => (
-  <Inspiration {...args} />
-);
+const Template: Story<InspirationProps> = (args) => <Inspiration {...args} />;
 
 export const InspirationImage = Template.bind({});
 InspirationImage.args = {

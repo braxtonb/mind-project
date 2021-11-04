@@ -1,12 +1,12 @@
 import Grid from '@material-ui/core/Grid';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { PageLayout } from '../../components/PageLayout';
 import {
   NewHeader,
   NewFormContainer as NewForm,
 } from '../../components/NewPage';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     maxWidth: '42rem',
     margin: '0 auto',

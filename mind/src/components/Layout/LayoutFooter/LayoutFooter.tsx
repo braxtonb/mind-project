@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Theme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
@@ -10,7 +10,7 @@ const Footer = styled.footer`
   width: 100%;
 `;
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   wrapper: {
     background: '#f5f5f5',
     padding: '10px',

@@ -41,7 +41,9 @@
     "runContainer:prod": "docker run -d --rm -p 3000:80 mind:prod",
     "storybook": "msw init public/ && start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint '*/**/*.{js,ts,tsx}'"
+    "format": "prettier --write .",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "ntl": {
     "descriptions": {
@@ -96,7 +98,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "msw": "^0.35.0",
     "msw-storybook-addon": "^1.2.0",
-    "ntl": "^5.1.0"
+    "ntl": "^5.1.0",
+    "prettier": "2.4.1"
   },
   "msw": {
     "workerDirectory": "public"

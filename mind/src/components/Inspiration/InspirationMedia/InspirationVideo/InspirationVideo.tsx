@@ -59,7 +59,8 @@ const InspirationVideo: React.FC<InspirationVideoProps> = ({ inspiration }) => {
   };
 
   const _handleVideoError = () => {
-    alert('Error loading video');
+    // alert('Error loading video');
+    console.error('Error loading video');
   };
 
   return (

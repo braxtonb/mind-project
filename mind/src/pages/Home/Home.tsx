@@ -1,8 +1,8 @@
 import Grid from '@material-ui/core/Grid';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import { PageLayout } from '../../components/PageLayout';
 import { HomeHeader } from '../../components/HomePage';
 import { InspirationListContainer as InspirationList } from '../../components/Inspiration';
-import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   inspirationList: {

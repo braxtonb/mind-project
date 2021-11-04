@@ -66,9 +66,7 @@ const UpdateFormContainer: React.FC<UpdateFormContainerProps> = ({
   if (!data) {
     return (
       <Grid container item spacing={3} justifyContent="center">
-        <Typography align="center">
-          Loading inspiration...
-        </Typography>
+        <Typography align="center">Loading inspiration...</Typography>
       </Grid>
     );
   }

@@ -30,7 +30,7 @@ class InspirationClient {
 
     return {
       count: count === null ? 0 : +count,
-      inspirations: inspirations?.data ?? inspirations as InspirationType[],
+      inspirations: inspirations?.data ?? (inspirations as InspirationType[]),
     };
   };
 

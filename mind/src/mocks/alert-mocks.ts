@@ -8,7 +8,7 @@ const _createDefaultFakeAlert = (): Alert => {
     message: faker.random.words(4),
     severity: 'success',
   };
-}
+};
 
 export const createFakeAlert = (alert: Partial<Alert> = {}) => {
   return {

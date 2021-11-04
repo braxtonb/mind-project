@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import AlertSnackbar from '../AlertSnackbar';
 import { useAlertContext } from '../../../contexts/AlertContext/AlertContext.hooks';
 
-const INITIAL_IS_SNACKBAR_OPEN: boolean = false;
+const INITIAL_IS_SNACKBAR_OPEN = false;
 
 const AlertSnackbarContainer: React.FC = () => {
-  const { alertState: { alert } } = useAlertContext();
+  const {
+    alertState: { alert },
+  } = useAlertContext();
   const [isSnackbarOpen, setIsSnackbarOpen] = useState<boolean>(
     INITIAL_IS_SNACKBAR_OPEN,
   );

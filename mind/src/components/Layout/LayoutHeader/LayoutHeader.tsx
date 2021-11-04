@@ -1,5 +1,5 @@
-import TopNav from './TopNav/TopNav';
 import { makeStyles, Theme, createStyles, Hidden } from '@material-ui/core';
+import TopNav from './TopNav/TopNav';
 import Logo from '../../Logo/Logo';
 import MobileTopNav from './MobileTopNav/MobileTopNav';
 
